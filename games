@@ -6,7 +6,7 @@ API End Points: /games
 1.POST /games -->(created game)
 
 Request body: {
-  "name": "Pixel Raiders",
+  "name": "Pixel_Raiders",
   "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
   "price": 299,
   "status": "active"
@@ -15,7 +15,7 @@ Request body: {
 Response body:201(status code for created status)
 {
     "_id": "game001",
-    "name": "Pixel Raiders",
+    "name": "Pixel_Raiders",
     "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
     "price": 299,
     "status": "active"
@@ -27,40 +27,41 @@ Response body:201(status code for created status)
 
 Response body :200(status code :fetch is ok)
 
-{
+[{
   "_id": "game001",
   "name": "Pixel Raiders",
   "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
   "price": 299,
   "status": "active"
-}
+},
+   ....
+]
 
 				
 ----------------------------------------------------------------------------
 3.GET games/game001      -> (get product by id)
 	
 Response Body:200 (status code :fetch is ok):
-[
+
 {
   "_id": "game001",
   "name": "Pixel Raiders",
   "description": "Updated: now with multiplayer mode!",
   "price": 349,
   "status": "updated"
-},
+}
 
-.........
-]
+
 
 				
 ----------------------------------------------------------------------------
-4> PUT /games/gamed001 -> (Update product)
+4> PUT   /games/games001 -> (Update product)
 Request body:
 {
   "_id": "game001",
   "name": "Pixel Raiders",
   "description": "Updated: now with multiplayer mode!",
-  "price": 349,
+  "price": 500,
   "status": "updated"
 }
 
@@ -69,7 +70,7 @@ Response Body: 200(status code for updated successfully):
     "_id": "game001",
     "name": "Pixel Raiders",
     "description": "Updated: now with multiplayer mode!",
-    "price": 349,
+    "price": 500,
     "status": "updated"
   }
 
@@ -77,7 +78,7 @@ Response Body: 200(status code for updated successfully):
 				
 ----------------------------------------------------------------------------
 
-5> DELETE /games/game001   -> (delete product by id)
+5> DELETE  /games/game001   -> (delete product by id)
 
 Response Body:200 (status code :deleted successfully)
 				{
