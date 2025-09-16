@@ -1,0 +1,80 @@
+Base URL : http://localhost:8080
+
+API End Points: /games 
+=================================
+
+1.POST /collections -->(created collections)
+
+Request body: {
+  "amount": 15000,
+  "date": "2025-09-16"
+
+}
+
+Response body:201(status code for created status)
+{
+  "_id": "col001",
+  "amount": 15000,
+  "date": "2025-09-16"
+}
+
+
+----------------------------------------------------------------------------
+
+2.GET games -> (get all collections)
+
+[
+  {
+    "_id": "col001",
+    "amount": 15000,
+    "date": "2025-09-16"
+  },
+  {
+    "_id": "col002",
+    "amount": 22000,
+    "date": "2025-09-17"
+  }
+]
+
+
+				
+----------------------------------------------------------------------------
+3.GET /collections/col001      -> (get product by id)
+	
+Response Body:200 (status code :fetch is ok):
+{
+  "_id": "col001",
+  "amount": 15000,
+  "date": "2025-09-16"
+}
+
+
+				
+----------------------------------------------------------------------------
+4> PUT /collections/col001 -> (Update product)
+Request body:
+{
+  "_id": "col001",
+  "amount": 18000,
+  "date": "2025-09-16"
+}
+
+
+Response Body: 200(status code for updated successfully):
+{
+  "_id": "col001",
+  "amount": 18000,
+  "date": "2025-09-16"
+}
+
+
+
+				
+----------------------------------------------------------------------------
+
+5> DELETE /collections/col001   -> (delete product by id)
+
+Response Body:200 (status code :deleted successfully)
+				{
+					"message" : " Deleted successfully"
+				}	
