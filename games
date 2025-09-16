@@ -1,0 +1,86 @@
+Base URL : http://localhost:8080
+
+API End Points: /games 
+=================================
+
+1.POST /games -->(created game)
+
+Request body: {
+  "_id": "game001",
+  "name": "Pixel Raiders",
+  "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
+  "price": 299,
+  "status": "active"
+}
+
+Response body::201(status code for created status)
+{
+  "message": "Game created successfully",
+  "data": {
+    "_id": "game001",
+    "name": "Pixel Raiders",
+    "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
+    "price": 299,
+    "status": "active"
+  }
+}
+----------------------------------------------------------------------------
+
+2.GET games -> (get the games)
+
+Response body :200(status code :fetch is ok)
+
+{
+  "_id": "game001",
+  "name": "Pixel Raiders",
+  "description": "Retro-style platformer with pixel-perfect jumps and hidden treasures.",
+  "price": 299,
+  "status": "active"
+}
+
+				
+----------------------------------------------------------------------------
+3.GET games/game001      -> (get product by id)
+	
+Response Body:200 (status code :fetch is ok):
+{
+  "_id": "game001",
+  "name": "Pixel Raiders",
+  "description": "Updated: now with multiplayer mode!",
+  "price": 349,
+  "status": "updated"
+}
+
+				
+----------------------------------------------------------------------------
+4> PUT games/gamed001 -> (Update product)
+Request body:
+{
+  "_id": "game001",
+  "name": "Pixel Raiders",
+  "description": "Updated: now with multiplayer mode!",
+  "price": 349,
+  "status": "updated"
+}
+
+Response Body: 200(status code for updated successfully):
+{
+  "message": "Game updated successfully",
+  "data": {
+    "_id": "game001",
+    "name": "Pixel Raiders",
+    "description": "Updated: now with multiplayer mode!",
+    "price": 349,
+    "status": "updated"
+  }
+}
+
+				
+----------------------------------------------------------------------------
+
+5> DELETE /games/game001   -> (delete product by id)
+
+Response Body:200 (status code :deleted successfully)
+				{
+					"message" : " Deleted successfully"
+				}	
