@@ -1,0 +1,76 @@
+Base URL : http://localhost:8080
+
+API End Points: /games 
+=================================
+
+1.POST /recharges -->(created recharge for mem001)
+
+Request body: {
+  {
+  "memberId": "mem001",
+  "amount": 500
+}}
+
+Response body:201(status code for created status)
+
+   {
+  "_id": "r001",
+  "memberId": "mem001",
+  "amount": 500,
+  "dateTime": "2025-09-16 11:03:00"
+}
+  
+
+----------------------------------------------------------------------------
+
+2.GET /recharge -> (get the recharge)
+
+Response body :200(status code :fetch is ok)
+[
+  {
+    "_id": "r001",
+    "memberId": "mem001",
+    "amount": 500,
+    "dateTime": "2025-09-16 11:03:00"
+  },
+  ...
+]				
+----------------------------------------------------------------------------
+3.GET /recharge/mem001      -> (get recharge by id)
+	
+Response Body:200 (status code :fetch is ok):
+
+{
+  "_id": "r001",
+  "memberId":"mem001",
+  "amount": 500,
+  "dateTime": "2025-09-16 11:03:00"
+}
+
+
+				
+----------------------------------------------------------------------------
+4> PUT /recharge/mem001 -> (Update recharge of mem001)
+Request body:
+{
+  "_id": "r001",
+  "memberId": "mem001",
+  "amount": 600
+}
+
+Response Body: 200(status code for updated successfully):
+{
+  "_id": "r001",
+  "memberId": "mem001",
+  "amount": 600,
+  "dateTime": "2025-09-16 11:03:00"
+}
+				
+----------------------------------------------------------------------------
+
+5> DELETE /recharge/mem001  -> (delete recharge by id)
+
+Response Body:200 (status code :deleted successfully)
+				{
+					"message" : " Deleted successfully"
+				}	
