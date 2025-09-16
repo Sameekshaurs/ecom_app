@@ -1,0 +1,79 @@
+Base URL : http://localhost:8080
+
+1>POST  /Transactions ->(create transaction)
+Request Body:
+{
+  "game_id": "game001",
+  "member_id": "mem001",
+  "price": 1000,
+  "datetime": "2025-09-16T10:30:00Z"
+}
+Response Body: Status Code:201 (Created)
+{
+  "_id": "txn001",
+  "game_id": "game001",
+  "member_id": "mem001",
+  "price": 1000,
+  "datetime": "2025-09-16T10:30:00Z"
+}
+-----------------------------------------------------------------------------------------------
+2> GET /transactions ->(get all transactions)
+
+Response Body: Status Code :200(ok)
+
+[
+  {
+    "_id": "txn001",
+    "game_id": "game001",
+    "member_id": "mem001",
+    "price": 1000,
+    "datetime": "2025-09-16T10:30:00Z"
+  },
+  {
+    "_id": "txn002",
+    "game_id": "game002",
+    "member_id": "mem002",
+    "price": 1500,
+    "datetime": "2025-09-16T12:45:00Z"
+  }
+......
+]
+--------------------------------------------------------------------------------------------------
+3>GET transactions/txn001  ->(get transaction by id)
+
+Response Body:{
+  "_id": "txn001",
+  "game_id": "game001",
+  "member_id": "mem001",
+  "price": 1000,
+  "datetime": "2025-09-16T10:30:00Z"
+}
+---------------------------------------------------------------------------------------------------
+4> PUT  /transactions/txn001  ->(update transaction)
+
+Request Body:
+{
+  "_id": "txn001",
+  "game_id": "game001",
+  "member_id": "mem001",
+  "price": 1200,
+  "datetime": "2025-09-16T11:00:00Z"
+}
+ Response Body:status Code:200(updated successfully)
+{
+  "_id": "txn001",
+  "game_id": "game001",
+  "member_id": "mem001",
+  "price": 1200,
+  "datetime": "2025-09-16T11:00:00Z"
+}
+-------------------------------------------------------------------------------------------------------
+
+5> DELETE  transactions/txn001   ->(delete transaction by id)
+
+Response Body: status code: 200(deleted successfully)
+
+{
+  "message": "Deleted successfully"
+}
+---------------------------------------------------------------------------------------------
