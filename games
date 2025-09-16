@@ -39,7 +39,7 @@ Response body :200(status code :fetch is ok)
 
 				
 ----------------------------------------------------------------------------
-3.GET games/game001      -> (get product by id)
+3.GET games/game001      -> (get games by id)
 	
 Response Body:200 (status code :fetch is ok):
 
@@ -55,7 +55,7 @@ Response Body:200 (status code :fetch is ok):
 
 				
 ----------------------------------------------------------------------------
-4> PUT   /games/games001 -> (Update product)
+4> PUT   /games/games001 -> (Update game)
 Request body:
 {
   "_id": "game001",
@@ -78,7 +78,7 @@ Response Body: 200(status code for updated successfully):
 				
 ----------------------------------------------------------------------------
 
-5> DELETE  /games/game001   -> (delete product by id)
+5> DELETE  /games/game001   -> (delete game by id)
 
 Response Body:200 (status code :deleted successfully)
 				{
