@@ -1,0 +1,75 @@
+1> POST/members->(create member)
+Request Body:
+{
+ "name":"John Doe",
+ "ph_no":"9845325529",
+ "balance":500
+}
+Response Body:
+ status code:201(Created)
+{
+  "_id": "mem001",
+  "name": "John Doe",
+  "ph_no": "9876543210",
+  "balance": 500
+}
+----------------------------------------------------------------------------------------
+2> GET/members->(Get all members)
+Response Body:status code :200(OK)
+[
+  {
+    "_id": "mem001",
+    "name": "John Doe",
+    "ph_no": "9876543210",
+    "balance": 500
+  },
+  {
+    "_id": "mem002",
+    "name": "Alice Smith",
+    "ph_no": "9123456789",
+    "balance": 1200
+  }
+]
+-----------------------------------------------------------------------------------------------
+3>GET/members/{id}->(Get member by id)
+Response Body: status code :200(OK)
+
+{
+  "_id": "mem001",
+  "name": "John Doe",
+  "ph_no": "9876543210",
+  "balance": 500
+}
+-----------------------------------------------------------------------------------------------
+4> PUT/members{id}->(update member)
+
+Request Body:{
+  "_id": "mem001",
+  "name": "John Doe",
+  "ph_no": "9876543210",
+  "balance": 1000
+}
+
+Response Body:status code:200(updated Successfully)
+
+{
+  "_id": "mem001",
+  "name": "John Doe",
+  "ph_no": "9876543210",
+  "balance": 1000
+}
+----------------------------------------------------------------------------------------------------
+5> DELETE/members{id}->(Delete member by id)
+
+Response Body:Status code:200(Deleted successfully)
+
+{
+  "message": "Deleted successfully"
+}
+-------------------------------------------------------------------------
+
+
+
+
+
+
